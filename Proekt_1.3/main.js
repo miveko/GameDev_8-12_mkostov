@@ -43,6 +43,7 @@ function create() {
 }
 
 function update() {
+    checkIfPlayersAreDead()
     updatePlayerOnePosition() 
     updatePlayerTwoPosition()
     updateShurikens()
@@ -123,9 +124,6 @@ function P1_Sh2_collision(object1, object2) {
     object2.destroy()   //унищожаваме шурикена
     pos = p2_shurikens.indexOf(object2) //намираме индекса на шурикена в масива от шурикени на играч 2
     p2_shurikens.splice(pos, 1)         // и го премахваме от масива с шурикени на играч 2
-    if(p1_blood <= 0) {
-        alert("Player 2 wins. Press F5 to start a new game...")
-    }
 }
 
 function P2_Sh1_collision(object1, object2) {
@@ -133,6 +131,15 @@ function P2_Sh1_collision(object1, object2) {
     object2.destroy()   //унищожаваме шурикена
     pos = p1_shurikens.indexOf(object2) //намираме индекса на шурикена в масива от шурикени на играч 1
     p1_shurikens.splice(pos, 1)         // и го премахваме от масива с шурикени на играч 2
+}
+
+function checkIfPlayersAreDead() {
+    if(p1_blood <= 0 && p2_blood <= 0) {
+        alert("It's a draw")
+    }
+    if(p1_blood <= 0) {
+        alert("Player 2 wins. Press F5 to start a new game...")
+    }
     if(p2_blood <= 0) {
         alert("Player 1 wins. Press F5 to start a new game...")
     }    
