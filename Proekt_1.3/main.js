@@ -11,6 +11,8 @@ let p2_blood = 100;
 const damage = 15       // поражението, което нанася един шурикен при сблъсък с играч
 let result = p1_blood + " :: " + p2_blood   //текст с резултата 
 let text_result
+let timerEvent 
+let events = 0
 
 function preload() {
     Game.load.image("ninja", "ninja3.png")
@@ -40,6 +42,8 @@ function create() {
     keyD = Game.input.keyboard.addKey(Phaser.Keyboard.D)
     keyShift = Game.input.keyboard.addKey(Phaser.Keyboard.SHIFT)
     keyLeft = Game.input.keyboard.addKey(Phaser.Keyboard.LEFT)
+    // timerEvent = Game.time.events.add(Phaser.Timer.SECOND * 1, timerEventActinos, this)
+    timerEvent = Game.time.events.loop(Phaser.Timer.SECOND * 10, timerEventActinos, this)
 }
 
 function update() {
@@ -145,18 +149,12 @@ function checkIfPlayersAreDead() {
     }    
 }
 
-function timerEventActinos() {    
+function timerEventActinos() {
+    events++
+    shurikenSpeed += 5
+    console.log("Number of events: " + events)
+    if(events > 10) {
+        Game.time.events.remove(timerEvent)
+    }
 }
-
-
-function anohterFunction () {
-    //moi neshta
-    //oshte moi neshta
-}
-
-function functionFromSomeoneElse() {
-    //fds
-    //промени, свързани с разрешаването на конфликта
-}
-
 
