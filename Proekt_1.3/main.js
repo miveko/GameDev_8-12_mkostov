@@ -144,3 +144,6 @@ function checkIfPlayersAreDead() {
         alert("Player 1 wins. Press F5 to start a new game...")
     }    
 }
+
+function timerEventActinos() {    
+}
