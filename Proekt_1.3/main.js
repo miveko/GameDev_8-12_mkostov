@@ -20,7 +20,6 @@ function preload() {
 let randomNumber = 0
 
 function create() {
-    //промяна
     Game.stage.backgroundColor = Phaser.Color.getRandomColor()
     text_result = Game.add.text(Game.width / 2, 0, result, {font: "50px Arial", fill: "#ffffff"}) //визуалният обект, който изобразява резултата
     text_result.anchor.x = 0.5
