@@ -148,6 +148,15 @@ function checkIfPlayersAreDead() {
 function timerEventActinos() {    
 }
 
+
 function anohterFunction () {
     //moi neshta
+    //oshte moi neshta
 }
+
+function functionFromSomeoneElse() {
+    //fds
+    //промени, свързани с разрешаването на конфликта
+}
+
+
