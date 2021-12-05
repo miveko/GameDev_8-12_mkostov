@@ -147,3 +147,7 @@ function checkIfPlayersAreDead() {
 
 function timerEventActinos() {    
 }
+
+function anohterFunction () {
+    //moi neshta
+}
